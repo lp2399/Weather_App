@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans+JP' rel='stylesheet' type='text/css'>
+    <title>Weather App</title>
+     <!-- icons from https://erikflowers.github.io/weather-icons/ 
+    https://www.iconfinder.com/icons/314407/note_text_icon
+    -->
+  </head>
+  <body>
+    <div class="container">
+      <p id="city"></p>
+      <p id="day"></p>
+      <p id="time"></p>
+    
+      <div class="box"> <hr>
+          <p id="temp"></p>
+          <img id="icon"  style="width: 4rem; height: auto;">
+      </div>
+          <div class="grid-container">
+          <p class="weather-item" draggable="true" ><img src="images/descriptionIcon.svg" draggable="false" class="icon" alt=""><span draggable="false" id="description"></span></p>
+          <p class="weather-item" draggable="true" ><img src="images/wi-humidity.svg" draggable="false" class="icon" alt=""> <span draggable="false" id="humidity"></span></p>
+          <p class="weather-item" draggable="true" ><img src="images/wi-thermometer.svg" draggable="false" class="icon" alt=""> <span draggable="false" id="feels-like"></span></p>
+          <p class="weather-item" draggable="true" ><img src="images/wi-strong-wind.svg"  draggable="false" class="icon"alt=""> <span draggable="false" id="wind"></span></p>
+          <p class="weather-item" draggable="true" ><img src="images/wi-cloud.svg" draggable="false" class="icon" alt=""> <span draggable="false" id="clouds"></span></p>
+          <p class="weather-item" draggable="true" ><img src="images/wi-barometer.svg" draggable="false" class="icon" alt=""> <span draggable="false" id="pressure"></span></p>
+          </div>
+          <button type="button" id="change-location">
+              Change Location
+            </button>
+        </div>
+      </div>
+    </div>
+
+  <div class="modal-container">
+            <button type="button" id="close-button" aria-label="Close">
+              <span aria-hidden="true" >×</span>
+            </button>
+            <h3>Choose Location</h3>
+            <br>
+            <form id="form">
+                <label for="city">City</label>
+                <input type="text" id="input-city">
+                <span class="input-line"></span>
+                 <!-- its actually country but is supposed to be state see weather.js--><label for="state">Country</label>
+                  <input type="text" id="input-state" >
+                  <span class="input-line"></span>
+            </form>
+            <button id="select" type="button" >Select</button>
+    </div>
+    <div class="message initial">City or Country Not Found Try Again</div>
+    <div class="saved initial"> Saved</div>
+  <script src="weather.js"></script>
+    <script src="app.js"></script> 
+  </body>
+  </html>
